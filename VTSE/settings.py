@@ -31,12 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'vtsesearch.apps.VtsesearchConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_elasticsearch_dsl',
+    'django_safe_settings',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +78,11 @@ WSGI_APPLICATION = 'VTSE.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'vtdb',
+        'USER': 'root',
+        'PASSWORD': 'enc:0b841346d5fdf48e2eae60a70096d299',
+        'HOST':'34.131.3.134'
     }
 }
 
@@ -121,3 +127,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ELASTICSEARCH_DSL={
+    'default': {
+        'hosts': '34.131.61.179:9200',
+        'timeout': 60
+    },
+}
+
+from django_safe_settings.patch import patch_all
+patch_all()
