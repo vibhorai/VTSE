@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'vtdb',
         'USER': 'root',
         'PASSWORD': 'enc:0b841346d5fdf48e2eae60a70096d299',
-        'HOST':'34.131.3.134'
+        'HOST':'34.131.168.230'
     }
 }
 
@@ -130,7 +130,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ELASTICSEARCH_DSL={
     'default': {
-        'hosts': '34.131.61.179:9200',
+        'hosts': '34.131.168.230:9200',
         'timeout': 60
     },
 }
