@@ -81,8 +81,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'vtdb',
         'USER': 'root',
-        'PASSWORD': 'enc:0b841346d5fdf48e2eae60a70096d299',
-        'HOST':'34.131.168.230'
+        'PASSWORD': 'enc:4db3a4cabf2eddd5510eb8fe7c3d231b',
+        'HOST':'34.131.204.183'
     }
 }
 
